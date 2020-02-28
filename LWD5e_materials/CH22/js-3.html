@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="intro">
+    <p>Hello. Welcome</p>
+    <button id="hello" type="button">
+      Hello
+    </button>
+    <script>
+      document.getElementById("hello").onclick = hello;
+      function hello() {
+        document.getElementById("intro").style.color = "#fff";
+        document.getElementById("intro").style.backgroundColor = "#f58220";
+        alert(document.getElementById("intro").style.backgroundColor);
+      }
+    </script>
+  </body>
+</html>
