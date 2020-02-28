@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="our-div">
+      <p id="our-paragraph">Our paragraph text</p>
+    </div>
+    <button id="pressParagraph" type="button">
+      Insert p after paragraph text
+    </button>
+    <button id="pressH1" type="button">
+      Insert h1 before paragraph text
+    </button>
+    <button id="clear" type="button">
+      Clear the screen
+    </button>
+    <script>
+      document.getElementById("pressParagraph").onclick = createParagraph;
+      function createParagraph() {
+        var ourDiv = document.getElementById("our-div");
+        var newParagraph = document.createElement("p");
+        var copy = document.createTextNode("Hello, world!");
+        newParagraph.appendChild(copy);
+        ourDiv.appendChild(newParagraph);
+      }
+      document.getElementById("pressH1").onclick = createH1;
+      function createH1() {
+        var ourDiv = document.getElementById("our-div");
+        var para = document.getElementById("our-paragraph");
+        var newHeading = document.createElement("h1");
+        var headingText = document.createTextNode("A new heading");
+        newHeading.appendChild(headingText);
+        ourDiv.insertBefore(newHeading, para);
+      }
+      document.getElementById("clear").onclick = clearScreen;
+      function clearScreen() {
+        location.reload();
+      }
+    </script>
+  </body>
+</html>

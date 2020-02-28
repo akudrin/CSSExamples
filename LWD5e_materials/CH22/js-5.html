@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="our-div">
+      <div id="swap-me">Text to replace!</div>
+      <div id="remove-me">Text to remove!</div>
+    </div>
+    <button id="replace" type="button">
+      Replace
+    </button>
+    <button id="remove" type="button">
+      Remove
+    </button>
+    <button id="clear" type="button">
+      Clear the screen
+    </button>
+    <script>
+      document.getElementById("replace").onclick = swap;
+      function swap() {
+        var ourDiv = document.getElementById("our-div");
+        var swapMe = document.getElementById("swap-me");
+        var newH3 = document.createElement("h3");
+        var copy = document.createTextNode("Replaced text!");
+        newH3.appendChild(copy);
+        ourDiv.replaceChild(newH3, swapMe);
+      }
+
+      document.getElementById("remove").onclick = remove;
+      function remove() {
+        var parentDiv = document.getElementById("our-div");
+        var removeMe = document.getElementById("remove-me");
+        parentDiv.removeChild(removeMe);
+      }
+
+      document.getElementById("clear").onclick = clearScreen;
+      function clearScreen() {
+        location.reload();
+      }
+    </script>
+  </body>
+</html>
