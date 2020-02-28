@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      src="background.jpg"
+      alt="electric guitar"
+      id="lead-image"
+      style="width:1000px;height:600px"
+    />
+
+    <p id="update paragraph"></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <script>
+      var bigImage = document.getElementById("lead-image");
+      alert(bigImage.getAttribute("src"));
+      let d = new Date();
+      document.getElementById("update paragraph").innerHTML =
+        "<h1>Today's date is " + d + "</h1>";
+    </script>
+  </body>
+</html>
